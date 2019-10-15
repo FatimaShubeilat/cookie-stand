@@ -68,8 +68,6 @@ cookieData.textContent = 'Totals';
 
 }
 
-// store all kittens, notice last kitten was not first stored in a variable
-
 
 var seattle = new States('Seattle', 23, 65, 6.3);
 var tokyo = new States('Tokyo', 20, 50, 1.2 );
