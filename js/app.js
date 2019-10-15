@@ -1,47 +1,46 @@
+  
 var hours = ['' ,'6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 
-  function States(location, min, max, avg){
-    this.location = location;
-    this.min = min;
-    this.max = max;
-    this.avg = avg;
-    this.cookiesArray = [];
-    this.dailyCookieSales = 0;
+function States(location, min, max, avg){
+  this.location = location;
+  this.min = min;
+  this.max = max;
+  this.avg = avg;
+  this.cookiesArray = [];
+  this.dailyCookieSales = 0;
 
-    this.amountOfCookiesPerHourFunction();
-  }
-
-  States.prototype.generateRandom = function() {
-    var range = this.max - this.min;
-
-    var randomNumber = Math.ceil(Math.random() * range + this.min);
-
-    return randomNumber;
+  this.amountOfCookiesPerHourFunction();
 }
 
-  States.prototype.amountOfCookiesPerHourFunction = function(){
-    for (var i = 0; i < hours.length; i++) {
+States.prototype.generateRandom = function() {
+  var range = this.max - this.min;
 
-        var amountOfCookiesCeil = Math.ceil(this.generateRandom() * this.avg);
-  
-        this.cookiesArray.push(amountOfCookiesCeil);
-        this.dailyCookieSales += amountOfCookiesCeil;
-      }
-  }
+  var randomNumber = Math.ceil(Math.random() * range + this.min);
+
+  return randomNumber;
+}
+
+States.prototype.amountOfCookiesPerHourFunction = function(){
+  for (var i = 0; i < hours.length; i++) {
+
+      var amountOfCookiesCeil = Math.ceil(this.generateRandom() * this.avg);
+
+      this.cookiesArray.push(amountOfCookiesCeil);
+      this.dailyCookieSales += amountOfCookiesCeil;
+    }
+}
 
 States.prototype.outpuHTML = function() {
-    var container = document.getElementById('ShopsData');
-    var article = document.createElement('article');
-    container.appendChild(article);
+  var container = document.getElementById('ShopsData');
+  var article = document.createElement('article');
+  container.appendChild(article);
 // do table
 
-var table = document.createElement('table');
-article.appendChild(table);
 
 // header row
 var headerRow = document.createElement('tr');
-table.appendChild(headerRow);
+article.appendChild(headerRow);
 
 for(var i=0 ; i<hours.length; i++){
 var statesHeader = document.createElement('th');
@@ -51,11 +50,19 @@ statesHeader.textContent = hours[i];
 
 // Seattle Row
 var dataRow = document.createElement('tr');
-table.appendChild(dataRow);
+article.appendChild(dataRow);
 
 var cookieData = document.createElement('th');
 dataRow.appendChild(cookieData);
 cookieData.textContent = this.location;
+
+// Seattle Row
+var dataRow = document.createElement('tr');
+article.appendChild(dataRow);
+
+var cookieData = document.createElement('th');
+dataRow.appendChild(cookieData);
+cookieData.textContent = 'Totals';
 
 
 
@@ -73,6 +80,6 @@ var lima = new States('Lima', 2,16,4.6);
 
 var states = [seattle, tokyo, dubai,paris,lima];
 for (var i = 0; i < states.length; i++) {
-    states[i].outpuHTML();
-  console.log(states[i]);
+  states[i].outpuHTML();
+console.log(states[i]);
 }
