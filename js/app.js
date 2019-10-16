@@ -15,7 +15,7 @@ function States(location, min, max, avg){
 // adding the event listener 
 var shopsForms = document.getElementById("addShopForm");
 
-shopsProfile.addEventListener('submit' , function(event) {
+shopsForms.addEventListener('submit' , function(event) {
 event.preventDefault();      // the defaullt is to move to another page so stop i from this we will do this command
 var location= event.target.location.value; // name from the form not the constructor
  var min = event.target.minimum.value;
@@ -51,32 +51,24 @@ States.prototype.amountOfCookiesPerHourFunction = function(){
     // console.log(this.dailyCookieSales);
 }
 
+
 States.prototype.outputToHTML = function() {
-    var ShopsParentElement = document.getElementById("shopsProfile")
-  
-    var article = document.createElement('article');
-    ShopsParentElement.appendChild(article);
-
-    var table = document.createElement('table');
-    article.appendChild(table);
-
-
-    var addedRow = document.createElement('tr');
-  table.appendChild(addedRow);
+  var tr = document.createElement('tr');
+  table.appendChild(tr);
 
   var td = document.createElement('td');
-  addedRow.appendChild(td);
-  addedRow.textContent = this.location;
+  tr.appendChild(td);
+  td.textContent = this.location;
 
   for(var i=0; i<hours.length ; i++) {
-  var  td = document.createElement('td');
-    addedRow.appendChild(td);
+    td = document.createElement('td');
+    tr.appendChild(td);
     td.textContent = this.cookiesArray[i];
   }
 
- var  td = document.createElement('td');
-  addedRow.appendChild(td);
-  addedRow.textContent = this.dailyCookieSales;
+  td = document.createElement('td');
+  tr.appendChild(td);
+  td.textContent = this.dailyCookieSales;
   console.log(this.dailyCookieSales);
 }
 
@@ -154,6 +146,7 @@ for (var i = 0; i < shops.length; i++) {
 
   shop.outputToHTML(table);
 }
+
 
 outputFRow(table);
 
