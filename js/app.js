@@ -127,7 +127,7 @@ addingFooterRow();
 function submitHandler(event) {
     event.preventDefault();
 
- // you can listen to many kind of events
+ // you can listen to many kind of eventss
  // the defaullt is to move to another page so stop i from this we will do this command
     var location = event.target.location.value; // name from the form not the constructor
     var min = parseInt(event.target.minimum.value); // parse to change the string into number
@@ -147,114 +147,5 @@ function submitHandler(event) {
 var branchForm = document.getElementById('addShopForm');
 branchForm.addEventListener('submit', submitHandler);
 
-/*
-
-Branch.prototype.outputToHTML = function () {
-    var tr = document.createElement('tr');
-    table.appendChild(tr);
-
-    var td = document.createElement('td');
-    tr.appendChild(td);
-    td.textContent = this.location;
-
-    for (var i = 0; i < hours.length; i++) {
-        td = document.createElement('td');
-        tr.appendChild(td);
-        td.textContent = this.cookiesArray[i];
-    }
-
-    td = document.createElement('td');
-    tr.appendChild(td);
-    td.textContent = this.dailyCookieSales;
-    console.log(this.dailyCookieSales);
-}
-
-// Header row function
-function outputHRow(table) {
-    var tr = document.createElement('tr');
-    table.appendChild(tr);
-    var th = document.createElement('th');
-
-    tr.appendChild(th);
-
-    for (var i = 0; i < hours.length; i++) {
-        th = document.createElement('th');
-        tr.appendChild(th);
-        th.textContent = hours[i];
-    }
-
-    th = document.createElement('th');
-    tr.appendChild(th);
-    th.textContent = 'Daily Location Total'
-}
 
 
-// foorter function
-
-function outputFRow(table) {
-    var tr = document.createElement('tr');
-    table.appendChild(tr);
-    var td = document.createElement('td');f
-    tr.appendChild(td);
-    td.textContent = 'Totals';
-
-    var totalCount = 0;
-    for (var j = 0; j < hours.length; j++) {
-        td = document.createElement('td');
-        tr.appendChild(td);
-
-        var countSum = 0;
-        for (var i = 0; i < shops.length; i++) {
-            var shop = shops[i];
-            countSum += shop.cookiesArray[j];
-        }
-        td.textContent = countSum;
-        totalCount += countSum;
-
-    }
-
-    td = document.createElement('td');
-    tr.appendChild(td);
-    td.textContent = totalCount;
-}
-
-
-var seattle = new Branch('Seattle', 23, 65, 6.5);
-var dubai = new Branch('Dubai', 11, 38, 3.7);
-var tokyo = new Branch('Tokyo', 3, 24, 1.2);
-var paris = new Branch('Paris', 20, 38, 2.3);
-var lima = new Branch('Lima', 2, 16, 4.6);
-
-// adding this array after creating the objects if you use push u won't need the next line
-var shops = [seattle, dubai, tokyo, paris, lima]; // add more shops when ready
-
-
-// adding this part here instead of the above is absolutely okay
-
-// var container = document.getElementById('content-area');
-
-// var table = document.createElement('table');
-
-// container.appendChild(table);
-
-outputHRow(table);
-
-for (var i = 0; i < shops.length; i++) {
-
-    var shop = shops[i];
-
-    shop.outputToHTML(table);
-}
-
-
-outputFRow(table);
-
-
-
-// // console.log(name);
-
-// var interests = event.target.interests.value;
-// // the interset is an array.
-// interests = interests.split(',');
-// // console.log(interests);
-*/
