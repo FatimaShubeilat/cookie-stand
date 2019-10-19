@@ -11,7 +11,6 @@ var footerRow;
 var table = document.createElement('table');
 container.appendChild(table);
 
-
 //// function to help for shortcutting 
 
 function addingElement(tag, container, textInside){
