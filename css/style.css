@@ -202,3 +202,50 @@ body {
     text-align: center;
     padding-top: 60px;
   }
+  header h1 {
+    color: rgb(236, 183, 208);
+    font-size: 300%;
+    padding-top: 15px;
+    text-align: center;
+    }
+      table {
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          border: 5px solid #444;
+          padding: 5%;
+          margin: 2%;
+          background-color: rgb(177, 160, 166);
+      }
+      table th {
+        color: rgb(90, 40, 56);
+        font-size: 150%;
+      }
+      table td {
+          color: rgb(90, 18, 45);
+          font-family: Arial, Helvetica, sans-serif;
+          border: 1px solid #444;
+          font-size: 150%;
+      }
+      .formTitle h2 {
+          margin-left: 60px;
+          font-size: 180%;
+color: rgb(90, 40, 56);
+      }
+      form {
+        position: relative;
+        width  : 1200px;
+        margin : 0 auto;
+        background: rgb(177, 160, 166);
+      }
+  input, textarea, select {
+    width : 150px;
+    margin: 10px;
+    box-sizing: border-box;
+    background-color: rgb(240, 229, 233);
+  }
+  legend {
+    width: 1px;
+    height: 20px;
+    overflow: hidden;
+    position: absolute;
+  }
+  
